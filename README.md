@@ -21,46 +21,42 @@
 
 Bézier 曲线通过递归线性插值构造：
 
-[
+$$
 P(t) = (1 - t) P_i + t P_{i+1}
-]
+$$
 
 通过逐层插值递归计算，最终得到曲线点：
 
-[
+$$
 P(t) = \sum_{i=0}^{n} P_i B_i(t)
-]
+$$
 
 其核心特性为：
 
-* **全局控制性（Global Control）**
-* 所有控制点共同影响整条曲线
-
----
-
+- 全局控制性（Global Control）
+- 所有控制点共同影响整条曲线
 ### 2.2 B 样条曲线（Cox–de Boor）
 
 B 样条曲线采用基函数线性组合形式：
 
-[
+$$
 P(t) = \sum_{i=0}^{n} P_i N_{i,p}(t)
-]
+$$
 
-其中基函数 ( N_{i,p}(t) ) 通过 Cox–de Boor 递归定义：
+其中基函数 $N_{i,p}(t)$ 通过 Cox–de Boor 递归定义：
 
-[
+$$
 N_{i,p}(t) =
 \frac{t - u_i}{u_{i+p} - u_i} N_{i,p-1}(t)
 +
 \frac{u_{i+p+1} - t}{u_{i+p+1} - u_{i+1}} N_{i+1,p-1}(t)
-]
+$$
 
 本项目采用：
 
-* **均匀开区间节点向量（Clamped Knot Vector）**
-* **三次 B 样条（p = 3）**
-* **端点插值（Endpoint Interpolation）**
-
+- 均匀开区间节点向量（Clamped Knot Vector）
+- 三次 B 样条（$p = 3$）
+- 端点插值（Endpoint Interpolation）
 ---
 
 ## 3. 核心实现
