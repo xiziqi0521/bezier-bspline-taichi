@@ -56,7 +56,7 @@ $$
 本项目采用：
 
 * 均匀开区间节点向量（Clamped Knot Vector）
-* 三次 B 样条（$p = 3$）
+* 三次 B 样条（p = 3）
 * 端点插值（Endpoint Interpolation）
 
 ---
@@ -67,7 +67,7 @@ $$
 
 * Bézier：递归 De Casteljau
 * B 样条：Cox–de Boor 全局计算
-* 统一参数域：$t \in [0,1]$
+* 统一参数域：t ∈ [0, 1]
 
 所有采样点在 CPU 端一次性计算完成，避免频繁 CPU-GPU 通信。
 
@@ -215,7 +215,7 @@ $$
 
 ## 9. 未来工作
 
-* 曲线连续性分析（$C^1$ / $C^2$）
+* 曲线连续性分析（C¹ / C² 连续性）
 * 自适应采样（Adaptive Sampling）
 * 曲线拟合与反求（Curve Fitting）
 * 三维曲线扩展
