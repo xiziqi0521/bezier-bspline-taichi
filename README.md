@@ -35,6 +35,7 @@ $$
 
 - 全局控制性（Global Control）
 - 所有控制点共同影响整条曲线
+
 ### 2.2 B 样条曲线（Cox–de Boor）
 
 B 样条曲线采用基函数线性组合形式：
@@ -57,6 +58,7 @@ $$
 - 均匀开区间节点向量（Clamped Knot Vector）
 - 三次 B 样条（$p = 3$）
 - 端点插值（Endpoint Interpolation）
+
 ---
 
 ## 3. 核心实现
@@ -65,7 +67,7 @@ $$
 
 * Bézier：递归 De Casteljau
 * B 样条：Cox–de Boor 全局计算
-* 统一参数域：( t \in [0,1] )
+* 统一参数域：$t \in [0,1]$
 
 所有采样点在 CPU 端一次性计算完成，避免频繁 CPU-GPU 通信。
 
@@ -89,9 +91,9 @@ $$
 * **像素中心距离计算**
 * **指数衰减权重模型**
 
-[
+$$
 w = e^{-d \cdot \alpha}
-]
+$$
 
 实现效果：
 
@@ -183,7 +185,6 @@ w = e^{-d \cdot \alpha}
 ├── 1+plus.py       # 扩展版本（B样条 + 抗锯齿）
 ├── README.md
 ```
-
 ---
 
 ## 8. 总结
@@ -202,7 +203,7 @@ w = e^{-d \cdot \alpha}
 
 ## 9. 未来工作
 
-* 曲线连续性分析（C¹ / C²）
+* 曲线连续性分析（$C^1$ / $C^2$）
 * 自适应采样（Adaptive Sampling）
 * 曲线拟合与反求（Curve Fitting）
 * 三维曲线扩展
