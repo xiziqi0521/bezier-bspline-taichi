@@ -1,5 +1,5 @@
 # Bézier & B-Spline Curve Rendering System (Taichi-based)
-
+# 202411081099 计算机科学与技术 席子琦
 ## 1. 项目概述
 
 本项目基于 Python 与 Taichi 框架，实现了一个**交互式二维曲线建模与渲染系统**。系统围绕经典曲线模型——Bézier 曲线与 B 样条曲线展开，完整覆盖了从数学建模、数值计算到 GPU 光栅化渲染的全过程。
